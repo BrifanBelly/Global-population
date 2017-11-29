@@ -1,0 +1,22 @@
+<table class="table table-striped"  >
+    <thead>
+      <tr>
+        <th scope="col">Country name</th>
+        <th scope="col">North</th>
+        <th scope="col">South</th>
+        <th scope="col">Continent</th>
+        <th scope="col">Capital</th>
+        <th scope="col">Population</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let country of countries'>
+        <td>{{country.countryName}}</td>
+        <td>{{country.south}}</td>
+        <td>{{country.north}}</td>
+        <td>{{country.continentName}}</td>
+        <td>{{country.capital}}</td>
+        <td>{{country.population}}</td>
+      </tr>
+    </tbody>
+  </table>
