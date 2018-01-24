@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'Jaldi', sans-serif;
+    background-image: url("./assets/population.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }

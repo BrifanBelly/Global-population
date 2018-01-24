@@ -1,3 +1,8 @@
+<div class="row">
+  <button class="btn btn-default" (click)="filterBy('europe')">Europe</button>
+  <button class="btn btn-default" (click)="filterBy('all')">All</button>
+  <button class="btn btn-default" (click)="filterBy('pop')">Population</button>
+</div>
 <table class="table table-striped"  >
     <thead>
       <tr>
@@ -11,7 +16,7 @@
     </thead>
     <tbody>
       <tr *ngFor='let country of countries'>
-        <td>{{country.countryName}}</td>
+        <td><a [routerLink]="['/country',country.countryName]">{{country.countryName}}</a></td>
         <td>{{country.south}}</td>
         <td>{{country.north}}</td>
         <td>{{country.continentName}}</td>

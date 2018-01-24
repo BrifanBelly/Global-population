@@ -7,16 +7,6 @@ import 'rxjs/add/operator/do';
 
 @Injectable()
 export class GetListService {
-country: Countries[] = [
-  {
-    'countryName' : 'butan',
-    'south': '40002',
-    'north': '3344',
-    'continentName': 'Europe',
-    'capital': 'nfif',
-    'population': '1000'
-  }
-];
 private Url = 'http://api.geonames.org/countryInfoJSON?username=benten';
   constructor(private _http: Http) {}
 
@@ -24,6 +14,19 @@ private Url = 'http://api.geonames.org/countryInfoJSON?username=benten';
     return this._http
     .get(this.Url)
     .map((res: Response) => <Countries[]>res.json().geonames)
+    .do(data => console.log(data));
+  }
+
+  getCountry(name: string): Observable<Countries> {
+    return this.getAll()
+    .map((c: Countries[]) => c.find(country => country.countryName === name));
+  }
+
+  getAsp() {
+    console.log('called');
+    return this._http
+    .get('http://localhost:5000/api/customers')
+    .map(res => res.json())
     .do(data => console.log(data));
   }
 }
